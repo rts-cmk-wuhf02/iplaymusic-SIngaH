@@ -1,0 +1,33 @@
+#wrapper{
+    font-family: 'Poppins', sans-serif;
+}
+h1{
+    font-size: 32px;
+    background: var(--pink-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight:1000;
+    padding: 19px;
+}
+h2{
+    font-size: 32px;
+    color:#FFF;
+    font-weight:1000;
+}
+h3, .navicon{
+    font-size:15px;
+    color:var(--not-background);
+    text-transform: uppercase;
+}
+p{
+    font-size:12px;
+    color:#fff;
+}
+.footericon{
+    background: var(--pink-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:23px;
+}

@@ -1,0 +1,23 @@
+footer{
+    margin:20px 0 0 0;
+    display:flex;
+    justify-content:space-around;
+    position:sticky;
+    .fas{
+        margin:15px 0;
+    }
+    .heartrate{
+        margin:15px 0;
+    }
+    .circle{
+        background:var(--pink-gradient-circle);
+        width:55px;
+        height:55px;
+        border-radius:50%;
+        display:grid;
+        .circles{
+            place-self:center;
+            width: 30px;
+        }
+    }
+}
