@@ -1,0 +1,40 @@
+.category h4:nth-of-type(1){
+    background-color:var(--dark-pink);
+    padding:5%;
+    border-radius:15px;
+
+}
+
+.category h4:nth-of-type(2){
+    background-color:var(--orange);
+    padding:5%;
+    border-radius:15px;
+
+}
+.categories{
+    display:grid;
+    grid-template-rows:1fr auto;
+    margin:0 5%;
+    .category{
+        margin:5% 0;
+    }
+    h4{
+        display:flex;
+        justify-content:space-between;
+    }
+    .category-ul{
+        list-style: none;
+        padding-top:10px;
+        li{
+            color:#fff;
+            text-decoration: none;
+            padding:5px 21px;
+            display:flex;
+            justify-content:space-between;
+        }
+        .hide{
+            display:none;
+
+        }
+    }
+}
