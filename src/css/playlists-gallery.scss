@@ -1,0 +1,14 @@
+.swiper-wrapper{
+    display:flex;
+    justify-content:space-between;
+    flex-direction:row;
+    width:465px;
+    img{
+        width:155px;
+        height:155px;
+        margin:15px;
+    }
+    .img1{
+        margin-left: -60px;
+    }
+}

@@ -1,0 +1,40 @@
+.top-50{
+    text-align:center;
+}
+.songs{
+    display:flex;
+    justify-content: space-around;
+    flex-direction:column;
+    .song{
+        display:grid;
+        grid-template-rows:repeat(2, 1fr);
+        grid-template-columns: 1fr repeat(2, 2fr);
+        margin:19px 10px;
+        .circle{
+            grid-row:1/span 2;
+            grid-column:1;
+            background:var(--pink-gradient-circle);
+            width:55px;
+            height:55px;
+            border-radius:50%;
+            display:grid;
+            img{
+                place-self:center;
+                width: 18px;
+            }
+        }
+        .time{
+            grid-row:1/span 2;
+            grid-column:3; 
+            place-self: center end;
+        }
+    }
+}
+.button{
+    width:375px;
+    display:grid;
+    #listen-all{
+        place-self: center;
+        margin:15px 0;
+    }
+}
