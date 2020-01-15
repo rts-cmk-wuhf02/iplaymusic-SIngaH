@@ -1,0 +1,59 @@
+.playing{
+    padding-right: 42%;
+}
+.bgimg{
+    background-image: url("../images/player-bgimg.jpg");
+    background-repeat: no-repeat;
+    height:100%;
+    width:auto;
+}
+main{
+    display:grid;
+}
+// NEED TO FIX-------------------------------------
+.player-circle1, .player-circle2, .player-circle3{
+    background-color:var(--light-pink);
+    border-radius:50%;
+}
+.player-circle1{
+    display:grid;
+    place-self:center;
+    width:325px;
+    height:325px;
+    opacity:25%;
+    .player-circle2{
+        display:contents;
+        place-self: center;
+        width:275px;
+        height:275px;
+        opacity:35%;
+        .player-circle3{
+            display:contents;
+            place-self: center;
+            width:225px;
+            height:225px;
+            opacity:45%;
+        }
+    }
+}
+.player-circle-img{
+    place-self: center;
+    opacity:100%;
+}
+
+.player-footer{
+    display:flex;
+    justify-content: space-around;
+    padding-bottom:50px;
+    .littlebtns{
+        height:15px;
+        width:auto;
+        margin-top:8%;
+    }
+    .play{
+        height:75px;
+    }
+    .previous-song, .rewind{
+        transform: rotate(180deg);
+    }
+}
