@@ -1,4 +1,5 @@
 <%- include('../partials/head') %>
+    <link rel="stylesheet" href="assets/css/albums/albums.css">
 </head>
 <body>
     <div id="wrapper">
@@ -10,7 +11,30 @@
         <main>
             <h1>All Albums</h1> 
             <section class="albums">
-
+                <div class="album-text">
+                    <h4>Featured albums</h4>
+                    <h4 class="veiw-all">Veiw All</h4>
+                </div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <a class="swiper-slide"><img src="assets/images/placeholder.jpg" alt="placeholder" class="gallery-img img1"></a>
+                        <a class="swiper-slide"><img src="assets/images/placeholder.jpg" alt="placeholder" class="gallery-img img2"></a>
+                        <a class="swiper-slide"><img src="assets/images/placeholder.jpg" alt="placeholder" class="gallery-img img3"></a>
+                    </div>
+                </div>
+            <div class="album-text">
+                <h4>New Releases</h4>
+                <h4 class="veiw-all">Veiw All</h4>
+            </div>
+            <section class="songs">
+                <div class="song">
+                    <a href="album-details.html">
+                        <img src="assets/images/placeholder.jpg" alt="placeholder" class="song-img">
+                        <h4>testing layout</h4>
+                        <p>testing layout</p>
+                        <p class="amount-of-songs">12 songs</p>
+                    </a>
+                </div>
             </section> 
         </main>
         <%- include('../partials/footer2') %>

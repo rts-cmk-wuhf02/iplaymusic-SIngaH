@@ -3,6 +3,8 @@ footer{
     display:flex;
     justify-content:space-around;
     position:sticky;
+    background-color:var(--footer);
+    box-shadow: 0 0 20px 10px var(--footer);
     .fas{
         margin:15px 0;
     }

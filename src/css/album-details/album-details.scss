@@ -1,0 +1,62 @@
+nav h3{
+    padding-right: 42%;
+}
+.bgimg{
+    background-image: url("../../images/player-bgimg.jpg");
+    background-repeat: no-repeat;
+    height:auto;
+    width:100%;  
+}
+main h5{
+    font-weight:bold;
+    padding:65px 0 0 14px;
+}
+.all-songs, main h4{
+    padding: 14px 0 0 14px;
+}
+main .light{
+    font-weight:normal;
+}
+main button{
+    background-color: var(--light-pink);
+    color:#fff;
+    border:none;
+    border-radius:15px;
+    padding:2px 5px;
+    font-weight:bold;
+    font-size:15px;
+    margin: 14px 0 24px 14px;
+}
+.song-amount{
+    margin-bottom:150px;
+}
+.songs{
+    display:flex;
+    justify-content: space-around;
+    flex-direction:column;
+    .song a{
+        display:grid;
+        grid-template-rows:repeat(2, 1fr);
+        grid-template-columns: 1fr repeat(2, 2fr);
+        margin:19px 10px;
+        text-decoration: none;
+        .circle{
+            grid-row:1/span 2;
+            grid-column:1;
+            background:var(--pink-gradient-circle);
+            width:55px;
+            height:55px;
+            border-radius:50%;
+            display:grid;
+            img{
+                place-self:center;
+                width: 18px;
+            }
+        }
+        .time{
+            grid-row:1/span 2;
+            grid-column:3; 
+            place-self: center end;
+        }
+    }
+}
