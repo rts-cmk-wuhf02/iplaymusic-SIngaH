@@ -5,11 +5,12 @@
     display:flex;
     justify-content: space-around;
     flex-direction:column;
-    .song{
+    .song a{
         display:grid;
         grid-template-rows:repeat(2, 1fr);
         grid-template-columns: 1fr repeat(2, 2fr);
         margin:19px 10px;
+        text-decoration: none;
         .circle{
             grid-row:1/span 2;
             grid-column:1;
