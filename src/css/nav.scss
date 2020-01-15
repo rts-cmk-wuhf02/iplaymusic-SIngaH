@@ -3,4 +3,7 @@ nav{
     flex-direction:row;
     justify-content: space-between;
     padding: 19px;
+    .navicon{
+        color:var(--not-background);
+    }
 }

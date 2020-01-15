@@ -20,9 +20,36 @@ h3, .navicon{
     color:var(--not-background);
     text-transform: uppercase;
 }
+h4{
+    font-size:15px;
+    color:var(--not-background);
+    font-weight:bold;
+}
+h5{
+    font-size: 36px;
+    color:#fff;
+    padding: 19px;
+}
+h6{
+    font-size:20px;
+    color:var(--not-background);
+    font-weight:bold;
+}
+.hide{
+    color:var(--not-background);
+}
 p{
     font-size:12px;
     color:#fff;
+}
+#listen-all{
+    font-size:15px;
+    color:var(--light-pink);
+    border:solid 2px var(--light-pink);
+    border-radius:25px;
+    background-color:var(--background-color);
+    padding: 10px 62px;
+    // button-playlist
 }
 .footericon{
     background: var(--pink-gradient);
