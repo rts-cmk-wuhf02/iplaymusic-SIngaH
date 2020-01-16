@@ -31,8 +31,8 @@ function scss(done){
     done();
 }
 
-function watchScss(){
-    gulp.watch("./src/css/**/*.scss", { igonreInitial: false }, scss);
+function watchScss(done){
+    gulp.watch("./src/css/**/*.scss", { ignoreInitial: false }, scss);
 }
 
 function js(done){
@@ -45,8 +45,8 @@ function js(done){
     done();
 };
 
-function watchJs(){
-    gulp.watch("./src/js/**/*.js", { igonreInitial: false }, js);
+function watchJs(done){
+    gulp.watch("./src/js/**/*.js", { ignoreInitial: false }, js);
 }
 
 function images(done){
@@ -57,7 +57,7 @@ function images(done){
     done();
 }
 
-function watchImages(){
+function watchImages(done){
     gulp.watch("./src/images/**/*", { ignoreInitial: false }, images);
 }
 
