@@ -3,12 +3,17 @@
     justify-content:space-between;
     flex-direction:row;
     width:465px;
+    margin-left:-25%;
     img{
         width:155px;
         height:155px;
         margin:15px;
     }
-    .img1{
-        margin-left: -60px;
+}
+// Jeg har undesøgt det og de eneste skærmstørrelser som er mindre end 375px(som er min største størrelse p.g.a XD filen) er 360px og 320px
+@media screen and (max-width: 320px) {
+    .swiper-wrapper {
+        margin-left: -34%;
     }
+
 }
