@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/rts-cmk-wuhf02/iplaymusic-SIngaH#readme",
   "dependencies": {
-    "@babel/core": "^7.8.0",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
     "ejs": "^3.0.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
