@@ -1,0 +1,10 @@
+.veiw-all a{
+        color:var(--light-pink);
+        text-decoration: none;
+}
+.album-text{
+    padding: 10px 19px;
+    display:flex;
+    justify-content:space-between;
+    flex-direction:row;
+}

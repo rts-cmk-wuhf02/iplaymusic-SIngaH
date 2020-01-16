@@ -1,0 +1,29 @@
+.bgimg{
+    background-image: url("../../images/player-bgimg.jpg");
+    background-repeat: no-repeat;
+    height:auto;
+    width:100%;  
+}
+nav h3{
+    padding-right: 42%;
+}
+main h5{
+    font-weight:bold;
+    padding:65px 0 0 14px;
+}
+.all-songs, main h4{
+    padding: 14px 0 0 14px;
+}
+main .light{
+    font-weight:normal;
+}
+main button{
+    background-color: var(--light-pink);
+    color:#fff;
+    border:none;
+    border-radius:15px;
+    padding:2px 5px;
+    font-weight:bold;
+    font-size:15px;
+    margin: 14px 0 24px 14px;
+}
