@@ -2,9 +2,12 @@ footer{
     margin:20px 0 0 0;
     display:flex;
     justify-content:space-around;
-    position:sticky;
-    background-color:var(--footer);
-    box-shadow: 0 0 20px 10px var(--footer);
+    position: fixed;
+    background-color: var(--footer);
+    bottom: 0%;
+    width: 375px;
+    z-index: 10;
+    padding: 7px 0;
     .fas{
         margin:15px 0;
     }
