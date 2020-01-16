@@ -5,7 +5,8 @@ footer{
     position: fixed;
     background-color: var(--footer);
     bottom: 0%;
-    width: 375px;
+    width: 100%;
+    max-width: 375px;
     z-index: 10;
     padding: 7px 0;
     .fas{
