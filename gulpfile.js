@@ -19,21 +19,6 @@ function html(done){
     done();
 }
 
-// function html(done){
-//     gulp.src("./src/html/templates/*.ejs")
-//         .pipe(ejs().on("error", err => console.log(err)))
-//         .pipe(rename(function(path){
-//             if(path.basename!= "index"){
-//                 path.dirname = path.basename;
-//                 path.basename = "index";
-//             }
-//             path.extname = ".html"; 
-//         })) 
-//         .pipe(gulp.dest("./dist"))
-//         .pipe(connect.reload());
-//     done();
-// }
-
 function watchHtml(done){
     gulp.watch("./src/html/**/*.ejs", { ignoreInitial: false }, html);
 }
