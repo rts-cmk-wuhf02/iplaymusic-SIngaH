@@ -1,0 +1,17 @@
+.player-footer{
+    display:flex;
+    justify-content: space-around;
+    padding-bottom:50px;
+    margin: 0 25px;
+    .littlebtns{
+        height:15px;
+        width:auto;
+        margin-top:8%;
+    }
+    .play{
+        height:75px;
+    }
+    .previous-song, .rewind{
+        transform: rotate(180deg);
+    }
+}
