@@ -9,11 +9,15 @@ footer{
     max-width: 375px;
     z-index: 10;
     padding: 7px 0;
+    box-shadow: 0px -1px 31px var(--footer-shadow);
     .fas{
         margin:15px 0;
     }
     .heartrate{
         margin:15px 0;
+    }
+    .adjust{
+        cursor: pointer;
     }
     .circle{
         background:var(--pink-gradient-circle);
