@@ -2,18 +2,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let root = document.querySelector(":root");
     let colorChange = document.querySelector(".adjust");
     let bgColor = "black";
-    let blackColor = document.cookie.indexOf(bgColor) == 0;
-    let whiteColor = document.cookie.indexOf(bgColor) == 44;
-    
+
     colorChange.addEventListener("click", ()=>{
-        //  if(bgColor == "black"){
-            if(document.cookie.indexOf(bgColor) == 0){
+         if(bgColor == "black"){
             bgColor = "white";
             root.style.setProperty("--background-color", "#fff");
             root.style.setProperty("--not-background", "#341931");
             root.style.setProperty("--footer", "#fff");
             root.style.setProperty("--footer-shadow", "#707070");
-            document.cookie = bgColor;
 
 // jeg kunne ikke finde iconer for to af dem i footeren så jeg lavede billederne i forskellige farver og ændrer dem her
             let url = window.location.href;
@@ -26,15 +22,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }else if(url.match("index") === null){
                 document.querySelector("#circleWhite").src="assets/images/circlesWhite.svg";
             }
-        //  }else if(bgColor == "white"){
-        }else if(document.cookie.indexOf(bgColor) == 44){
-           
+         }else if(bgColor == "white"){           
             bgColor = "black";
             root.style.setProperty("--background-color", "#341931");
             root.style.setProperty("--not-background", "#fff");
             root.style.setProperty("--footer", "#341931");
             root.style.setProperty("--footer-shadow", "#111625");
-            document.cookie = bgColor;
 
 // jeg kunne ikke finde iconer for to af dem i footeren så jeg lavede billederne i forskellige farver og ændrer dem her
             let url = window.location.href;
