@@ -12,6 +12,9 @@ main{
         grid-template-rows: 60% 40%;
         position:relative;
         border-radius:3%;
+        p{
+            color:#fff;
+        }
         img{
             position: absolute;
             grid-row:1/span 2;

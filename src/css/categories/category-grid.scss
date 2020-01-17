@@ -13,6 +13,9 @@
         .fa-ellipsis-h{
             padding-top:5px;
         }
+        h4{
+            color:#fff;
+        }
     }
     h4{
         display:flex;
@@ -26,7 +29,7 @@
 
         }
         li{
-            color:#fff;
+            color:var(--not-background);
             padding:5px 21px;
             display:flex;
             justify-content:space-between;
