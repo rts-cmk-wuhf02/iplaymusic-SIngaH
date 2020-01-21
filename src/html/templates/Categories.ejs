@@ -11,14 +11,7 @@
         <main>
             <h1>Categories</h1>
             <section class="categories">
-                    <div class="category">
-                        <h4 class="show-ul">Category grid tester <i class="fas fa-ellipsis-h"></i></h4>
-                        <ul class="category-ul">
-                            <a href="albums.html"><li>first<i class="fas fa-chevron-right"></i></li></a>
-                            <a href="albums.html"><li>second<i class="fas fa-chevron-right"></i></li></a>
-                            <a href="albums.html"><li>third<i class="fas fa-chevron-right"></i></li></a>
-                        </ul>
-                    </div>
+                   
             </section>
             <!--
                 input categories from api
@@ -31,8 +24,12 @@
                     7 var(--blue-green)
                     8 var(--light-blue)
                     9 var(--dark-blue)
-            -->
+                let colorArray = ["var(--dark-pink)", "var(--orange)", "var(--dark-yellow)", "var(--yellow)", "var(--light-green)", "var(--dark-green)", 
+"var(--blue-green)", "var(--light-blue)", "var(--dark-blue)"];
+
+                -->
         </main>
         <%- include('../partials/footer') %>
 </div>
+    <script type ="module" src="/assets/js/fetch-categories.js"></script>
 <%- include('../partials/last') %>
