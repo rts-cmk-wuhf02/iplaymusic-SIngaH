@@ -4,7 +4,7 @@ main{
 .featured{
     display:grid;
     grid-template-rows:430px 430px auto;
-    gap:5%;
+    gap:1%;
     .featured_album{
         margin:0 5%;
         overflow:hidden;
@@ -12,6 +12,7 @@ main{
         grid-template-rows: 60% 40%;
         position:relative;
         border-radius:3%;
+        height:425px;
         p{
             color:#fff;
         }
