@@ -1,4 +1,4 @@
-import {fetcher} from `fetch.js`;
+import {fetcher} from "./fetch.js";
 fetch("https://api.spotify.com/v1/albums", {
     //https://api.spotify.com/v1/browse/categories/{category_id}/playlists
     headers: {

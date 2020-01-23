@@ -1,4 +1,4 @@
-import {fetcher} from `fetch.js`;
+import {fetcher} from "./fetch.js";
 let params = new URLSearchParams(document.location.search);
 const idParams = params.get("id");
 fetch("https://api.spotify.com/v1/browse/categories/" + idParams + "/playlists", { 
