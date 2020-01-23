@@ -1,10 +1,11 @@
-    fetch("https://api.spotify.com/v1/browse/featured-playlists", { 
-        headers: {
-            "Accept" : "application/json",
-            "Content-Type" : "application/x-www-form-urlencoded",
-            "Authorization": "Bearer " + sessionStorage.getItem(`access_token`)
+import {fetcher} from `fetch.js`;
+fetch("https://api.spotify.com/v1/browse/featured-playlists", { 
+    headers: {
+        "Accept" : "application/json",
+        "Content-Type" : "application/x-www-form-urlencoded",
+        "Authorization": "Bearer " + sessionStorage.getItem(`access_token`)
     }
-    })
+})
     // .then(response => { //add function??
         // console.log(response.status);
         // if (response.status === 401) {
@@ -28,4 +29,11 @@
                 </div>`;
         })
     })
-    .catch(err => console.error(err));
+    .catch(error => {
+        console.error(error);
+        if(error){
+            fetcher();
+        }else if(sessionStorage.getItem('access_token') == "null"){
+            fetcher();
+        }
+    });

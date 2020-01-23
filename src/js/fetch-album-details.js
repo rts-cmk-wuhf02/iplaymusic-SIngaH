@@ -1,3 +1,4 @@
+import {fetcher} from `fetch.js`;
 fetch("https://api.spotify.com/v1/browse/categories/{category_id}/playlists", { 
     //https://api.spotify.com/v1/albums/
     //https://api.spotify.com/v1/albums//tracks
@@ -11,4 +12,11 @@ fetch("https://api.spotify.com/v1/browse/categories/{category_id}/playlists", {
 .then(function(result) {
     console.log(result);
 })
-.catch(err => console.error(err));
+.catch(error => {
+    console.error(error);
+    if(error){
+        fetcher();
+    }else if(sessionStorage.getItem('access_token') == "null"){
+        fetcher();
+    }
+});

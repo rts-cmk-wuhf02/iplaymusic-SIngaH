@@ -1,3 +1,4 @@
+import {fetcher} from `fetch.js`;
 let params = new URLSearchParams(document.location.search);
 const idParams = params.get("id");
 fetch("https://api.spotify.com/v1/browse/categories/" + idParams + "/playlists", { 
@@ -21,7 +22,14 @@ fetch("https://api.spotify.com/v1/browse/categories/" + idParams + "/playlists",
     
     // document.querySelector(".top-50").innerHTML = `${result.playlists.name}`;
 })
-.catch(err => console.error(err));
+.catch(error => {
+    console.error(error);
+    if(error){
+        fetcher();
+    }else if(sessionStorage.getItem('access_token') == "null"){
+        fetcher();
+    }
+});
 // https://api.spotify.com/v1/playlists/37i9dQZF1DXcBWIGoYBM5M
 // click function??   showArray??
 //make a click function on the images so that it calls a function whith the other fetch in it

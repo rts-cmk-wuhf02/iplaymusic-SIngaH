@@ -1,3 +1,4 @@
+import {fetcher} from `fetch.js`;
 fetch("https://api.spotify.com/v1/browse/categories", { 
     headers: {
         "Accept" : "application/json",
@@ -21,4 +22,11 @@ fetch("https://api.spotify.com/v1/browse/categories", {
             </div>`;
     })
 })
-.catch(err => console.error(err));
+.catch(error => {
+    console.error(error);
+    if(error){
+        fetcher();
+    }else if(sessionStorage.getItem('access_token') == "null"){
+        fetcher();
+    }
+});
