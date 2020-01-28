@@ -37,9 +37,9 @@ function watchScss(done){
 
 function js(done){
     gulp.src("./src/js/**/*.js")
-        .pipe(babel({
-            presets: ["@babel/env"]
-        }))
+        // .pipe(babel({
+        //     presets: ["@babel/env"]
+        // }))
         .pipe(gulp.dest("./dist/assets/js"))
         .pipe(connect.reload());
     done();
