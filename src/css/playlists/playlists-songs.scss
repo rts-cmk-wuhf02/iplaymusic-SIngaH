@@ -31,13 +31,16 @@
         }
     }
 }
-.button a{
-    width:375px;
-    display:grid;
-    text-decoration: none;
-    #listen-all{
-        cursor: pointer;
-        place-self: center;
-        margin:15px 0;
+.button{
+    margin-bottom:100px;
+    a{
+        width:375px;
+        display:grid;
+        text-decoration: none;
+        #listen-all{
+            cursor: pointer;
+            place-self: center;
+            margin:15px 0;
+        }
     }
 }
