@@ -1,42 +1,136 @@
 import {fetcher} from "./fetch.js";
 let params = new URLSearchParams(document.location.search);
-const idParams = params.get("id");
-fetch("https://api.spotify.com/v1/browse/categories/" + idParams + "/playlists", { 
-    // fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DXcBWIGoYBM5M", { 
-    headers: {
-        "Accept" : "application/json",
-        "Content-Type" : "application/x-www-form-urlencoded",
-        "Authorization": "Bearer " + sessionStorage.getItem(`access_token`)
-    }
-})
-.then(response => response.json())
-.then(function(result) {
-    console.log(result);
-    result.playlists.items.forEach(item => {
-        console.log(item.tracks);
+const categoryId = params.get("categoryId");
+if(categoryId === null){
+    //----------------------------playlists
+    fetch("https://api.spotify.com/v1/browse/categories/toplists/playlists", {
+        headers: {
+            "Accept" : "application/json",
+            "Content-Type" : "application/x-www-form-urlencoded",
+            "Authorization": "Bearer " + sessionStorage.getItem(`access_token`)
+        } 
+    })
+    .then(response => response.json())
+    .then(function(result) {
+        document.querySelector(".top-50").innerHTML= result.playlists.items[1].name;//`tester 4 now [1]`;
+        result.playlists.items.forEach(item => {
+            document.querySelector(".swiper-wrapper").innerHTML +=`
+                <a href="playlists.html" class="swiper-slide"><img src="${item.images[0].url}" alt="${item.name}" class="gallery-img img1"></a>
+            `;
+        });
+    })
+    .catch(error => {
+        console.error(error);
+        if(error){
+            fetcher();
+        }else if(sessionStorage.getItem('access_token') == null){
+            fetcher();
+        }
     });
-    document.querySelector(".swiper-wrapper").innerHTML=`
-        <a href="/playlists.html?id=${result.playlists.items[0].id}" class="swiper-slide"><img src="${result.playlists.items[0].images[0].url}" alt="" class="gallery-img img1"></a>
-        <a href="/playlists.html?id=${result.playlists.items[1].id}" class="swiper-slide"><img src="${result.playlists.items[1].images[0].url}" alt="" class="gallery-img img2"></a>
-        <a href="/playlists.html?id=${result.playlists.items[2].id}" class="swiper-slide"><img src="${result.playlists.items[2].images[0].url}" alt="" class="gallery-img img3"></a>`;
-    
-    // document.querySelector(".top-50").innerHTML = `${result.playlists.name}`;
-})
-.catch(error => {
-    console.error(error);
-    if(error){
-        fetcher();
-    }else if(sessionStorage.getItem('access_token') == "null"){
-        fetcher();
-    }
-});
-// https://api.spotify.com/v1/playlists/37i9dQZF1DXcBWIGoYBM5M
-// click function??   showArray??
-//make a click function on the images so that it calls a function whith the other fetch in it
+    //-----------------------------------------tracks
+// man kan ikke hente en category playlists tracks eller den rigtige id for at åbne de rigtige tracks så det er det bedste jeg kan gøre
+    fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DXcBWIGoYBM5M/tracks", {
+        headers: {
+            "Accept" : "application/json",
+            "Content-Type" : "application/x-www-form-urlencoded",
+            "Authorization": "Bearer " + sessionStorage.getItem(`access_token`)
+        } 
+    })
+    .then(response => response.json())
+    .then(function(result) {
+        document.querySelector(".button").innerHTML = `<a href="player.html?albumHref=${result.href}"><button id="listen-all">LISTEN ALL</button></a>`;
+        result.items.forEach(item => {            
+            var calResult = item.track.duration_ms/60000;
+            var time = 0 + calResult.toFixed(2);
+            
+            document.querySelector(".songs").innerHTML +=`
+                <div class="song">
+                    <a href="player.html?songId=${item.track.id}">
+                        <div class="circle">
+                            <img src="assets/images/play.png" alt="play">
+                        </div>
+                        <h4>${item.track.name}</h4>
+                        <p>${item.track.artists[0].name}</p>
+                        <p class="time">${time}</p>
+                    </a>
+                </div>
+            `;
+        });
+    })
+    .catch(error => {
+        console.error(error);
+        if(error){
+            fetcher();
+        }else if(sessionStorage.getItem('access_token') == null){
+            fetcher();
+        }
+    });
+}else{
+    //----------------------------playlists
+    fetch("https://api.spotify.com/v1/browse/categories/" + categoryId + "/playlists", {
+        headers: {
+            "Accept" : "application/json",
+            "Content-Type" : "application/x-www-form-urlencoded",
+            "Authorization": "Bearer " + sessionStorage.getItem(`access_token`)
+        } 
+    })
+    .then(response => response.json())
+    .then(function(result) {
+        document.querySelector(".top-50").innerHTML= result.playlists.items[1].name;//`tester 4 now [1]`;
+        result.playlists.items.forEach(item => {
+            console.log(item);
+            document.querySelector(".swiper-wrapper").innerHTML +=`
+                <a href="playlists.html" class="swiper-slide"><img src="${item.images[0].url}" alt="${item.name}" class="gallery-img img1"></a>
+            `;
+            
+        });
+    })
+    .catch(error => {
+        console.error(error);
+        if(error){
+            fetcher();
+        }else if(sessionStorage.getItem('access_token') == null){
+            fetcher();
+        }
+    });
+    //-----------------------------------------tracks
+// man kan ikke hente en category playlists tracks eller den rigtige id for at åbne de rigtige tracks så det er det bedste jeg kan gøre
+    fetch("https://api.spotify.com/v1/playlists/37i9dQZF1DXcBWIGoYBM5M/tracks", {
+        headers: {
+            "Accept" : "application/json",
+            "Content-Type" : "application/x-www-form-urlencoded",
+            "Authorization": "Bearer " + sessionStorage.getItem(`access_token`)
+        } 
+    })
+    .then(response => response.json())
+    .then(function(result) {
+        document.querySelector(".button").innerHTML = `<a href="player.html?albumHref=${result.href}"><button id="listen-all">LISTEN ALL</button></a>`;
 
-/*
-        <a href="/playlists.html?id=${result.playlists.items[0].id}" class="swiper-slide"><img src="assets/images/placeholder.jpg" data-src="${result.playlists.items[0].images[0].url}" alt="" class="gallery-img img1"></a>
-        <a href="/playlists.html?id=${result.playlists.items[1].id}" class="swiper-slide"><img src="assets/images/placeholder.jpg" data-src="${result.playlists.items[1].images[0].url}" alt="" class="gallery-img img2"></a>
-        <a href="/playlists.html?id=${result.playlists.items[2].id}" class="swiper-slide"><img src="assets/images/placeholder.jpg" data-src="${result.playlists.items[2].images[0].url}" alt="" class="gallery-img img3"></a>`;
-    
-        */
+        result.items.forEach(item => {            
+            var calResult = item.track.duration_ms/60000;
+            var time = 0 + calResult.toFixed(2);
+            
+            document.querySelector(".songs").innerHTML +=`
+                <div class="song">
+                    <a href="player.html?songId=${item.track.id}">
+                        <div class="circle">
+                            <img src="assets/images/play.png" alt="play">
+                        </div>
+                        <h4>${item.track.name}</h4>
+                        <p>${item.track.artists[0].name}</p>
+                        <p class="time">${time}</p>
+                    </a>
+                </div>
+            `;
+        });
+
+    })
+    .catch(error => {
+        console.error(error);
+        if(error){
+            fetcher();
+        }else if(sessionStorage.getItem('access_token') == null){
+            fetcher();
+        }
+    });
+}
