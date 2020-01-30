@@ -11,15 +11,19 @@
         <main>
             <h1>Categories</h1>
             <section class="categories">
-                   
-            </section>
-            <!--let colorArray = ["var(--dark-pink)", "var(--orange)", "var(--dark-yellow)", "var(--yellow)", "var(--light-green)", "var(--dark-green)", 
-"var(--blue-green)", "var(--light-blue)", "var(--dark-blue)"];
 
-                -->
+            </section>
         </main>
         <%- include('../partials/footer') %>
 </div>
+<template class="category">
+    <h4 class="show-ul"></h4>
+    <ul class="category-ul">
+        <li class="li li1"><a href="">First <i class="fas fa-chevron-right"></i></a></li>
+        <li class="li li2"><a href="">Second <i class="fas fa-chevron-right"></i></a></li>
+        <li class="li li3"><a href="">Third <i class="fas fa-chevron-right"></i></a></li>
+    </ul>
+</template>
     <script type="module" src="assets/js/fetch-categories.js"></script>
     <script src="assets/js/categories.js"></script>
     <script src="assets/js/color-change.js"></script> 
