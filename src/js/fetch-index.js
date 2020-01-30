@@ -11,11 +11,11 @@ fetch("https://api.spotify.com/v1/browse/featured-playlists", {
         result.playlists.items.forEach(item =>{
             document.querySelector(".featured").innerHTML +=`
                 <div class="featured_album">
-                <div class="featured_text">
-                <h2>${item.name}</h2>
-                <p>${item.type}</p>
-                </div>
-                <a href="player.html?id=${item.id}"><img src="${item.images[0].url}" alt="${item.name}"></a>
+                    <div class="featured_text">
+                        <h2>${item.name}</h2>
+                        <p>${item.type}</p>
+                    </div>
+                    <a href="playlists.html?id=${item.id}"><img src="${item.images[0].url}" alt="${item.name}"></a>
                 </div>`;
         })
     })

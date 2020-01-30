@@ -1,7 +1,9 @@
-.category h4:nth-of-type(1){
+.show-ul{
     background-color:var(--dark-pink);
     padding:5%;
     border-radius:15px;
+    margin:10px 0;
+    cursor: pointer;
 }
 .categories{
     display:grid;
@@ -9,9 +11,6 @@
     margin:0 5%;
     .category{
         margin:5% 0;
-        .fa-ellipsis-h{
-            padding-top:5px;
-        }
         h4{
             color:#fff;
         }
@@ -23,19 +22,20 @@
     .category-ul{
         list-style: none;
         padding-top:10px;
-        a{
-            text-decoration: none;
-
-        }
         li{
-            color:var(--not-background);
             padding:5px 21px;
-            display:flex;
-            justify-content:space-between;
-            display:none;
-        }
-        .show{
-            display:block;
+            a{
+                display:flex;
+                justify-content:space-between;
+                text-decoration: none;
+                color:var(--not-background);
+            }
         }
     }
+}
+.hide{
+    display:none;
+}
+.fa-ellipsis-h{
+    padding-top:5px;
 }

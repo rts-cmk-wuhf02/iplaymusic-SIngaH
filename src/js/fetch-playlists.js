@@ -123,7 +123,6 @@ if(categoryId === null){
                 </div>
             `;
         });
-
     })
     .catch(error => {
         console.error(error);

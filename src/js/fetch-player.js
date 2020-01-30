@@ -2,6 +2,7 @@ import {fetcher} from "./fetch.js";
 let params = new URLSearchParams(document.location.search);
 const idParams = params.get("Pid");
 const songId = params.get("songId");
+
 if(idParams != null){
     fetch("https://api.spotify.com/v1/tracks/" + idParams, { 
         headers: {
@@ -40,7 +41,6 @@ if(idParams != null){
     .then(response => response.json())
     .then(function(result) {
         console.log(result.duration_ms);
-
         document.querySelector("main").innerHTML=`
             <img src="assets/images/player-circles.svg" alt="woman in circle" class="player-circle-img">
             <h6 class="song-playing name">${result.name}</h6>
